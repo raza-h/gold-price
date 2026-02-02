@@ -1,0 +1,23 @@
+{
+  "name": "gold-api-backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "npm i -g yarn && yarn && nodemon index.js"
+  },
+  "dependencies": {
+    "@langchain/community": "^1.1.10",
+    "@langchain/core": "^1.1.18",
+    "cheerio": "^1.2.0",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "node-cron": "^4.2.1",
+    "puppeteer": "^24.36.1",
+    "twilio": "^5.12.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}
