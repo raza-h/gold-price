@@ -7,7 +7,7 @@ config();
 
 cron.schedule("*/5 17-20 * * 1-5", whatsappARYGoldRateJob, CRON_OPTIONS);
 
-cron.schedule("*/1 12-16,21-23,0-2 * * 1-5", whatsappARYGoldRateJob, CRON_OPTIONS);
+cron.schedule("*/15 12-16,21-23,0-2 * * 1-5", whatsappARYGoldRateJob, CRON_OPTIONS);
 
 cron.schedule("0 5-14 * * 1-5", whatsappARYGoldRateJob, CRON_OPTIONS);
 
