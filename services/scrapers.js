@@ -1,6 +1,6 @@
 import { CheerioWebBaseLoader as WebBaseLoader } from "@langchain/community/document_loaders/web/cheerio"
 
-export const scrapeARYGoldRate = async () => {
+export const aryScrapeGoldRate = async () => {
     try {
         const loader = new WebBaseLoader('https://arynews.tv/gold-rates-today-in-pakistan', {
             selector: 'h5',
