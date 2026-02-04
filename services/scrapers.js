@@ -18,3 +18,26 @@ export const aryScrapeGoldRate = async () => {
         console.error('ERROR SCRAPING:', err);
     }
 };
+
+export const goldPkScrapeGoldRate = async () => {
+    try {
+        const loader = new WebBaseLoader('https://gold.pk', {
+            selector: 'p',
+        });
+        const docs = await loader.load();
+        const text = docs?.[0]?.pageContent;
+        const targetText = text?.split('>')?.[0];
+        const goldRates = targetText?.split(')')?.slice(0, -1);
+        const formattedGoldRates = goldRates?.map((rateAndWeight) => {
+            const [rate, weight] = rateAndWeight?.split('24 Karat Gold Rate (');
+            return {
+                weight: weight,
+                rate: parseFloat(rate?.split('Rs.')?.[1]?.trim()),
+            }
+        })
+
+        return { rate: formattedGoldRates?.[0]?.rate, weight: formattedGoldRates?.[0]?.weight };
+    } catch (err) {
+        console.error('ERROR SCRAPING:', err);
+    }
+}
