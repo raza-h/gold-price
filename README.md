@@ -1,6 +1,6 @@
 # Gold Price Notification Cron ⏰
 
-A Node.js cron job that fetches gold prices and sends notifications when prices change. Designed for automating gold price alerts via your preferred notification channel.
+A Node.js cron job that fetches gold prices and sends notifications when prices change. Designed for automating gold price alerts via WhatsApp.
 
 ## Features
 
