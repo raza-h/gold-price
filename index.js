@@ -5,10 +5,12 @@ import cron from 'node-cron';
 
 config();
 
-cron.schedule("*/5 17-20 * * 1-5", goldPkWhatsappGoldRateJob.run, CRON_OPTIONS);
+cron.schedule("*/5 18-21 * * 1-5", goldPkWhatsappGoldRateJob.run, CRON_OPTIONS);
 
-cron.schedule("*/15 12-16,21-23,0-2 * * 1-5", goldPkWhatsappGoldRateJob.run, CRON_OPTIONS);
+cron.schedule("*/15 13-17,22-23,0-3 * * 1-5", goldPkWhatsappGoldRateJob.run, CRON_OPTIONS);
 
-cron.schedule("0 5-14 * * 1-5", goldPkWhatsappGoldRateJob.run, CRON_OPTIONS);
+cron.schedule("0 4-12 * * 1-5", goldPkWhatsappGoldRateJob.run, CRON_OPTIONS);
+
+cron.schedule("*/15 0-3 * * 6", goldPkWhatsappGoldRateJob.run, CRON_OPTIONS);
 
 console.log("SUCCESS SCHEDULING JOBS!");

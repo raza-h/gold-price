@@ -37,6 +37,10 @@ class WhatsappGoldRateJob {
                         from: FROM_NUMBER,
                         to: to_number,
                         body: notification,
+                        /* Instead of body, we can also use content templates with parameters like this.
+                            // contentSid: process.env.TWILIO_TEMPLATE_SID,
+                            // contentVariables: JSON.stringify({ rate, weight }),
+                        */
                     }));
                 });
 
