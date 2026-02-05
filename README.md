@@ -59,7 +59,7 @@ THRESHOLD=5000
 │   ├── trackers.js    # Instances of in-memory tracking states
 │   └── scrapers.js    # Web scraping functions for different websites
 ├── entities/
-│   └── Tracker.js               # Implementation for in-memory state for previous notified gold rate
+│   └── Tracker.js               # Implementation for in-memory state for previously notified gold price
 │   └── WhatsappGoldRateJob.js   # Implementation for sending whatsapp messages via Twilio
 ├── .env.example       # Example environment variables
 ├── .gitignore
