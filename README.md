@@ -36,7 +36,7 @@ yarn dev   # or npm run dev
 Create a `.env` file in the root directory with the following variables:
 
 ```env
-# Twilio Configuration (for Whatsapp notifications)
+# Twilio Configuration (for WhatsApp notifications)
 TWILIO_SID=ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 TWILIO_AUTH_TOKEN=your_twilio_auth_token
 TWILIO_FROM_NUMBER=+15551234567
@@ -60,7 +60,7 @@ THRESHOLD=5000
 │   └── scrapers.js    # Web scraping functions for different websites
 ├── entities/
 │   └── Tracker.js               # Implementation for in-memory state for previously notified gold price
-│   └── WhatsappGoldRateJob.js   # Implementation for sending whatsapp messages via Twilio
+│   └── WhatsappGoldRateJob.js   # Implementation for sending WhatsApp messages via Twilio
 ├── .env.example       # Example environment variables
 ├── .gitignore
 ├── package.json
@@ -80,7 +80,7 @@ THRESHOLD=5000
 
 ## Notification Channels
 
-### Whatsapp (Twilio)
+### WhatsApp (Twilio)
 
 Configure Twilio credentials in `.env`:
 
@@ -127,7 +127,7 @@ Schedules based on priority:
 **Notification failures:**
 - Check Twilio account balance
 - Check if sending is restricted due to Free Plan
-- Check if whatsapp sender and content template is configured for sending messages outside the 24-hour messaging window. I can help you set up an alternative that I use to save costs (Reach out via LinkedIn or email)
+- Check if WhatsApp sender and content template is configured for sending messages outside the 24-hour messaging window. I can help you set up an alternative that I use to save costs (Reach out via LinkedIn or email)
 
 ## Contributing
 
