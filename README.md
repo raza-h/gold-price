@@ -99,10 +99,11 @@ I've set up three cron schedules based on three sessions:
 - European Session (London): 1:00 PM – 10:00 PM PKT. This is a highly liquid period as the London market opens.
 - North American Session (New York): 6:00 PM – 3:00 AM PKT. This session often brings high volatility due to U.S. economic news releases.
 
-Low Priority: 4:00 AM - 1:00 PM (check every hour)
-High Priority: 1:00 PM - 6:00 PM and 10:00 PM to 3:00 AM (check every 15 minutes)
-Very High Priority: 6:00 PM - 10:00 PM (check every 5 minutes)
-Break: 3:00 AM to 4:00 AM
+Schedules based on priority:
+- Low Priority: 4:00 AM - 1:00 PM (check every hour)
+- High Priority: 1:00 PM - 6:00 PM and 10:00 PM to 3:00 AM (check every 15 minutes)
+- Very High Priority: 6:00 PM - 10:00 PM (check every 5 minutes)
+- Break: 3:00 AM to 4:00 AM
 
 
 ```javascript
