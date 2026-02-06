@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  app:
+    image: gold-price-image
+    build: .
+    volumes:
+      - sqlite3-volume:/app/data
+
+volumes:
+  sqlite3-volume:

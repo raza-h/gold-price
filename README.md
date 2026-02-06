@@ -46,14 +46,15 @@ yarn dev   # or npm run dev
     THRESHOLD=5000
     ```
 
-2. Add a data folder in the root directory and create `db.sqlite` file in that folder:
+2. For production, if you want data persistence, you will need a named volume. See the `docker-compose.yml` for reference.
+
+3. For local development and testing, add a data folder in the root directory and create `db.sqlite` file in that folder:
     ```bash
     mkdir data
     cd data
     touch db.sqlite
     ```
-
-3. Navigate to config/sqlite.js and update `dbPath` from `/data` to `../data` for local development and testing
+    Finally, navigate to config/sqlite.js and update `dbPath` from `/data` to `../data`.
 
 ## Project Structure
 
@@ -75,6 +76,8 @@ yarn dev   # or npm run dev
 │   └── WhatsappGoldRateJob.js   # Implementation for sending WhatsApp messages via Twilio
 ├── .env.example       # Example environment variables
 ├── .gitignore
+├── Dockerfile
+├── docker-compose.yml
 ├── package.json
 ├── yarn.lock
 └── README.md
