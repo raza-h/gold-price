@@ -46,9 +46,11 @@ yarn dev   # or npm run dev
     THRESHOLD=5000
     ```
 
-2. Create `db.sqlite` file and add a logs folder in the root directory:
+2. Add a data folder in the root directory and create `db.sqlite` file in that folder:
     ```bash
-    mkdir logs
+    mkdir data
+    cd data
+    touch db.sqlite
     ```
 
 ## Project Structure
