@@ -7,6 +7,4 @@ RUN yarn install
 
 COPY . .
 
-RUN mkdir -p /data
-
 CMD ["node", "index.js"]
