@@ -46,7 +46,10 @@ yarn dev   # or npm run dev
     THRESHOLD=5000
     ```
 
-2. Create `db.sqlite` file in the root directory
+2. Create `db.sqlite` file and add a logs folder in the root directory:
+    ```bash
+    mkdir logs
+    ```
 
 ## Project Structure
 
@@ -57,7 +60,8 @@ yarn dev   # or npm run dev
 ├── utils.js           # Helper functions (formatting)
 ├── config/
 │   ├── sqlite.js      # SQLite database configuration
-│   └── twilio.js      # Twilio configuration
+│   ├── twilio.js      # Twilio client configuration
+│   └── winston.js     # Winston logger configuration
 ├── services/          # Modules handling gold price retrieval and processing
 │   ├── jobs.js        # Instances of jobs responsible for sending notifications
 │   ├── trackers.js    # Instances of in-memory tracking states

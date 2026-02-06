@@ -1,7 +1,10 @@
+import { winstonLogger } from "../config/index.js";
 import { CheerioWebBaseLoader as WebBaseLoader } from "@langchain/community/document_loaders/web/cheerio"
 
 export const aryScrapeGoldRate = async () => {
     try {
+        winstonLogger.info("SCRAPING GOLD RATE FROM Ary News");
+
         const loader = new WebBaseLoader('https://arynews.tv/gold-rates-today-in-pakistan', {
             selector: 'h5',
         });
@@ -15,12 +18,14 @@ export const aryScrapeGoldRate = async () => {
 
         return { rate: formattedGoldRates?.[0]?.rate, weight: formattedGoldRates?.[0]?.weight };
     } catch (err) {
-        console.error('ERROR SCRAPING:', err);
+        winstonLogger.error('ERROR SCRAPING from Ary News:', err);
     }
 };
 
 export const goldPkScrapeGoldRate = async () => {
     try {
+        winstonLogger.info("SCRAPING GOLD RATE FROM gold.pk");
+
         const loader = new WebBaseLoader('https://gold.pk', {
             selector: 'p',
         });
@@ -38,6 +43,6 @@ export const goldPkScrapeGoldRate = async () => {
 
         return { rate: formattedGoldRates?.[0]?.rate, weight: formattedGoldRates?.[0]?.weight };
     } catch (err) {
-        console.error('ERROR SCRAPING:', err);
+        winstonLogger.error('ERROR SCRAPING FROM gold.pk:', err);
     }
 }

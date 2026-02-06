@@ -1,7 +1,8 @@
+import cron from 'node-cron';
+import { winstonLogger } from './config/index.js';
 import { config } from 'dotenv';
 import { CRON_OPTIONS } from './constants.js';
 import { goldPkWhatsappGoldRateJob } from './services/jobs.js';
-import cron from 'node-cron';
 
 config();
 
@@ -13,4 +14,4 @@ cron.schedule("0 4-12 * * 1-5", goldPkWhatsappGoldRateJob.run, CRON_OPTIONS);
 
 cron.schedule("*/15 0-3 * * 6", goldPkWhatsappGoldRateJob.run, CRON_OPTIONS);
 
-console.log("SUCCESS SCHEDULING JOBS!");
+winstonLogger.info("SUCCESS SCHEDULING JOBS!");

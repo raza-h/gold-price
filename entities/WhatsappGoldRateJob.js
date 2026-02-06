@@ -1,7 +1,7 @@
-import twilioClient from '../config/twilio.js';
+import Tracker from './Tracker.js';
+import { twilioClient, winstonLogger } from '../config/index.js';
 import { FROM_NUMBER, THRESHOLD } from '../constants.js';
 import { getUniqueStrings } from '../utils.js';
-import Tracker from './Tracker.js';
 
 class WhatsappGoldRateJob {
     constructor(scraper = async () => { }, tracker = new Tracker()) {
@@ -11,12 +11,11 @@ class WhatsappGoldRateJob {
     }
 
     async run() {
-        const notifiedGoldRate = await this.tracker.getNotifiedGoldRate();
-        console.log("NOTIFIED GOLD RATE:", notifiedGoldRate);
-
-        console.log("STARTING GOLD RATE JOB");
-
         try {
+            winstonLogger.info("STARTING GOLD RATE JOB");
+
+            const notifiedGoldRate = await this.tracker.getNotifiedGoldRate();
+
             const { rate = null, weight = null } = await this.scraper() ?? {};
 
             if (!rate) {
@@ -46,12 +45,12 @@ class WhatsappGoldRateJob {
                 });
 
                 await Promise.all(promises);
-                console.log('SUCCESS COMPLETING JOB, NOTIFICATIONS SENT!');
+                winstonLogger.info('SUCCESS COMPLETING JOB, NOTIFICATIONS SENT!');
             } else {
-                console.log("SUCCESS COMPLETING JOB, NO NOTIFICATIONS SENT!");
+                winstonLogger.info("SUCCESS COMPLETING JOB, NO NOTIFICATIONS SENT!");
             }
         } catch (err) {
-            console.error('ERROR SENDING NOTIFICATION:', err);
+            winstonLogger.error('ERROR SENDING NOTIFICATION:', err);
         }
 
     }

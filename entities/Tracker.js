@@ -1,9 +1,9 @@
-import db from '../config/sqlite.js';
+import { sqliteDb } from '../config/index.js';
 
 class Tracker {
     async getNotifiedGoldRate() {
         return new Promise((resolve, reject) => {
-            db.get(
+            sqliteDb.get(
                 `SELECT PRICE
                FROM gold_prices
                ORDER BY CREATED_AT DESC
@@ -19,7 +19,7 @@ class Tracker {
 
     async setNotifiedGoldRate(rate) {
         return new Promise((resolve, reject) => {
-            db.run(
+            sqliteDb.run(
                 `INSERT INTO gold_prices (PRICE, CREATED_AT)
                VALUES (?, datetime('now'))`,
                 [rate],

@@ -1,5 +1,5 @@
-import { config } from 'dotenv';
 import twilio from 'twilio';
+import { config } from 'dotenv';
 
 config();
 

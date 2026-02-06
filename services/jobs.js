@@ -1,4 +1,4 @@
-import WhatsappGoldRateJob from '../entities/WhatsappGoldRateJob.js';
+import { WhatsappGoldRateJob } from '../entities/index.js';
 import { goldPkScrapeGoldRate } from './scrapers.js';
 import { goldPkTracker } from './trackers.js';
 

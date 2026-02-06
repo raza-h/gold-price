@@ -1,3 +1,3 @@
-import Tracker from "../entities/Tracker.js";
+import { Tracker } from "../entities/index.js";
 
 export const goldPkTracker = new Tracker();
