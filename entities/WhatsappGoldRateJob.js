@@ -1,4 +1,4 @@
-import twilioClient from '../services/twilio.js';
+import twilioClient from '../config/twilio.js';
 import { FROM_NUMBER, THRESHOLD } from '../constants.js';
 import { getUniqueStrings } from '../utils.js';
 import Tracker from './Tracker.js';
@@ -11,7 +11,8 @@ class WhatsappGoldRateJob {
     }
 
     async run() {
-        const notifiedGoldRate = this.tracker.getNotifiedGoldRate();
+        const notifiedGoldRate = await this.tracker.getNotifiedGoldRate();
+        console.log("NOTIFIED GOLD RATE:", notifiedGoldRate);
 
         console.log("STARTING GOLD RATE JOB");
 
@@ -25,7 +26,7 @@ class WhatsappGoldRateJob {
             const notification = `Gold rate is Rs. ${rate?.toLocaleString()} per ${weight}`;
 
             if (!notifiedGoldRate || Math.abs(notifiedGoldRate - rate) >= THRESHOLD) {
-                this.tracker.setNotifiedGoldRate(rate);
+                await this.tracker.setNotifiedGoldRate(rate);
 
                 const messages = await twilioClient.messages.list({ to: FROM_NUMBER });
                 const recipients = getUniqueStrings(messages.map((message) => message?.from));

@@ -33,18 +33,20 @@ yarn dev   # or npm run dev
 
 ## Configuration
 
-Create a `.env` file in the root directory with the following variables:
+1. Create a `.env` file in the root directory with the following variables:
 
-```env
-# Twilio Configuration (for WhatsApp notifications)
-TWILIO_SID=ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-TWILIO_AUTH_TOKEN=your_twilio_auth_token
-TWILIO_FROM_NUMBER=+15551234567
-TWILIO_TEMPLATE_SID=HXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+    ```env
+    # Twilio Configuration (for WhatsApp notifications)
+    TWILIO_SID=ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    TWILIO_AUTH_TOKEN=your_twilio_auth_token
+    TWILIO_FROM_NUMBER=+15551234567
+    TWILIO_TEMPLATE_SID=HXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-# Price Alert Configuration
-THRESHOLD=5000
-```
+    # Price Alert Configuration
+    THRESHOLD=5000
+    ```
+
+2. Create `db.sqlite` file in the root directory
 
 ## Project Structure
 
@@ -53,9 +55,11 @@ THRESHOLD=5000
 ├── constants.js       # Configuration constants
 ├── index.js           # Cron setup
 ├── utils.js           # Helper functions (formatting)
+├── config/
+│   ├── sqlite.js      # SQLite database configuration
+│   └── twilio.js      # Twilio configuration
 ├── services/          # Modules handling gold price retrieval and processing
 │   ├── jobs.js        # Instances of jobs responsible for sending notifications
-│   └── twilio.js      # Twilio configuration
 │   ├── trackers.js    # Instances of in-memory tracking states
 │   └── scrapers.js    # Web scraping functions for different websites
 ├── entities/
