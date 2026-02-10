@@ -22,9 +22,9 @@ class WhatsappGoldRateJob {
                 return;
             }
 
-            winstonLogger.info('RECORDED RATE: ', notifiedGoldRate);
-            winstonLogger.info('CURRENT RATE: ', rate);
-            winstonLogger.info('CURRENT DIFFERENCE: ', Math.abs(notifiedGoldRate - rate));
+            winstonLogger.info(`RECORDED RATE: ${notifiedGoldRate}`);
+            winstonLogger.info(`CURRENT RATE: ${rate}`);
+            winstonLogger.info(`CURRENT DIFFERENCE: ${Math.abs(notifiedGoldRate - rate)}`);
 
             const notification = `Gold rate is Rs. ${rate?.toLocaleString()} per ${weight}`;
 

@@ -9,7 +9,10 @@ if (!fs.existsSync(dbFolder)) fs.mkdirSync(dbFolder, { recursive: true });
 
 const dbPath = path.join(dbFolder, "db.sqlite");
 
-const sqliteDb = new sqlite3.Database(dbPath);
+const sqliteDb = new sqlite3.Database(dbPath, (err) => {
+  if (err) winstonLogger.error("ERROR CONNECTING TO DB:", err);
+  else winstonLogger.info("CONNECTED TO DB!");
+});
 
 sqliteDb.serialize(() => {
     sqliteDb.run(`
