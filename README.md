@@ -72,7 +72,7 @@ yarn dev   # or npm run dev
 │   ├── trackers.js    # Instances of in-memory tracking states
 │   └── scrapers.js    # Web scraping functions for different websites
 ├── entities/
-│   └── Tracker.js               # Implementation for in-memory state for previously notified gold price
+│   ├── Tracker.js               # Implementation for in-memory state for previously notified 
 │   └── WhatsappGoldRateJob.js   # Implementation for sending WhatsApp messages via Twilio
 ├── .env.example       # Example environment variables
 ├── .gitignore
