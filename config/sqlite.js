@@ -3,7 +3,7 @@ import fs from "fs";
 import path from "path";
 import winstonLogger from "./winston.js";
 
-const dbFolder = "/data"; // ../data for local development
+const dbFolder = "/data"; // ./data for local development
 
 if (!fs.existsSync(dbFolder)) fs.mkdirSync(dbFolder, { recursive: true });
 

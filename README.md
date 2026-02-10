@@ -54,7 +54,7 @@ yarn dev   # or npm run dev
     cd data
     touch db.sqlite
     ```
-    Finally, navigate to config/sqlite.js and update `dbPath` from `/data` to `../data`.
+    Finally, navigate to config/sqlite.js and update `dbPath` from `/data` to `./data`.
 
 ## Project Structure
 
