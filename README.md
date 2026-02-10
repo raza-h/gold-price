@@ -145,7 +145,7 @@ Schedules based on priority:
 - Check if WhatsApp sender and content template is configured for sending messages outside the 24-hour messaging window. I can help you set up an alternative that I use to save costs (Reach out via LinkedIn or email)
 
 **Database setup:**
-- Navigate to config/sqlite.js and update `dbPath` from `/data` to `../data` for local development and testing
+- Navigate to config/sqlite.js and update `dbPath` from `/data` to `./data` for local development and testing
 
 ## Contributing
 
