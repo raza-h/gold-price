@@ -1,4 +1,4 @@
-# Gold Price Notification Cron ⏰
+# AurumPulse: Gold Price Notification Cron ⏰
 
 A Node.js cron job that fetches gold prices and sends notifications when prices change. Designed for automating gold price alerts via WhatsApp.
 
